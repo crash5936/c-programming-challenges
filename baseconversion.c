@@ -35,17 +35,22 @@ int main() {
 
 	}
 
+	return 0;
+
 }
 
 int convnum(int conv) {
 	if (conv <= 9) {
 		return conv + '0';
 	}
-	else if (conv > 9 && conv < 37) {
+	else if (conv > 9 && conv < 36) {
 		return conv + 'a' - 10;
 
 	}
-	else if (conv >= 37 && conv < 62) {
+	else if (conv >= 36 && conv < 62) {
 		return conv + 'A' - 36;
 	}
+
+	else
+		return -1;
 }
