@@ -13,7 +13,7 @@ int main()
 	char swapped = 1;
 	int n;
 	scanf ("%d", &n);
-	long* nums = malloc (n * sizeof (int));
+	long* nums = malloc (n * sizeof (long));
 	for (int i = 0; i < n; i++)
 		scanf ("%li", &nums[i]);
 
@@ -38,6 +38,8 @@ int main()
 	for (int i = 0; i < n; i++)
 		printf ("%li ", nums[i]);
 	printf ("\n");
+
+	free (nums);
 
 	return 0;
 }
