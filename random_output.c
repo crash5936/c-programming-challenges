@@ -3,11 +3,13 @@
 #include <time.h>
 #include <math.h>
 
-int main() {
+int main()
+{
 	long int n;
-	srandom(time(NULL));
-	for (int i = 0; i < 100; i++) {
-		printf("%ld\n", random() % 1000000000);
+	srandom (time (NULL));
+	printf ("999999\n");
+	for (int i = 0; i < 1000000; i++) {
+		printf ("%ld\n", random() % 1000000000);
 	}
 	return 0;
 
