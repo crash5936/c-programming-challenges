@@ -10,8 +10,8 @@ void swap (long* a, long* b)
 
 void quicksort (long* nums, long* end)
 {
-	int n = end - nums;
-	printf("array length is %d\n", n);
+	long n = end - nums;
+	
 	if (n <= 1)
 		return;
 
@@ -21,7 +21,6 @@ void quicksort (long* nums, long* end)
 	
 	for (int i = 1; i < n; i++) {
 		if (*(nums + i) < *pivot) {
-			printf("%li < pivot (%li), swapping with %li\n", *(nums + i), *pivot, *(lo + 1));
 			swap(nums + i, lo + 1);
 			lo++;
 		}
@@ -29,10 +28,8 @@ void quicksort (long* nums, long* end)
 	}
 
 	swap(pivot, lo);
-	printf("\npivot je ted %li\n", *pivot);
-	printf("lo je ted %li na pozici %li\n\n", *lo, lo - nums);
 
-	quicksort(nums, lo - 1);
+	quicksort(nums, lo);
 	quicksort(lo + 1, end); 
 
 
@@ -40,9 +37,9 @@ void quicksort (long* nums, long* end)
 
 int main()
 {
-	int n;
+	long n;
 
-	scanf("%d", &n);
+	scanf("%li", &n);
 
 	long* nums = malloc (n * sizeof (long));
 	
